@@ -1,0 +1,115 @@
+name: ✅ Task (小タスク)
+description: 1日以内で完了できる具体的なタスクを作成します
+title: "[TASK] "
+labels: ["task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Task（小タスク）
+        1日以内で完了できる、具体的で実行可能なタスクを定義します。
+
+  - type: input
+    id: title
+    attributes:
+      label: タスク名
+      description: このタスクを端的に表す名前
+      placeholder: 例：Issueテンプレートの作成
+    validations:
+      required: true
+
+  - type: textarea
+    id: overview
+    attributes:
+      label: 概要
+      description: このタスクで何をするのか
+      placeholder: 何をするか簡潔に（1-2行）
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景・目的
+      description: なぜこのタスクが必要なのか
+      placeholder: |
+        - どんな課題を解決するか
+        - どんな価値を生むか
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: 受け入れ条件
+      description: このタスクが完了したと判断する基準
+      placeholder: 完了の定義を明確に
+      value: |
+        - [ ] 条件1:
+        - [ ] 条件2:
+        - [ ] 条件3:
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 優先度
+      description: このタスクの優先度
+      options:
+        - High
+        - Medium
+        - Low
+      default: 1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: size
+    attributes:
+      label: サイズ
+      description: タスクの規模（工数の目安）
+      options:
+        - XS (1-2時間)
+        - S (2-4時間)
+        - M (4-8時間)
+        - L (8時間以上)
+      default: 1
+    validations:
+      required: true
+
+  - type: input
+    id: estimate
+    attributes:
+      label: 見積もり工数
+      description: 具体的な工数見積もり（時間）
+      placeholder: 例：3時間、0.5日
+    validations:
+      required: false
+
+  - type: input
+    id: related_epic
+    attributes:
+      label: 関連Epic
+      description: このタスクが紐づくEpic
+      placeholder: "#XX Epic名"
+    validations:
+      required: false
+
+  - type: input
+    id: deadline
+    attributes:
+      label: 完了目標日
+      description: いつまでに完了を目指すか
+      placeholder: 例：2025-01-15
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 備考
+      description: 参考リンク、技術的な注意点、前提条件など
+      placeholder: 追加情報があれば記載
+    validations:
+      required: false

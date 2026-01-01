@@ -1,0 +1,86 @@
+name: 🎯 Goal (年次目標)
+description: 年次または長期的な目標を設定します
+title: "[GOAL] "
+labels: ["goal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 年次目標（Goal/Objective）
+        長期的な目標や年次の方針を定義します。
+
+  - type: input
+    id: title
+    attributes:
+      label: 目標名
+      description: この目標を端的に表す名前
+      placeholder: 例：タスク管理システムの完全自動化
+    validations:
+      required: true
+
+  - type: textarea
+    id: overview
+    attributes:
+      label: 概要
+      description: この目標の概要を簡潔に説明してください
+      placeholder: 何を達成したいのか、なぜ重要なのか
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景・目的
+      description: なぜこの目標が必要なのか、どのような課題を解決するのか
+      placeholder: |
+        - 現状の課題
+        - 目標達成により得られる価値
+        - 優先度が高い理由
+    validations:
+      required: true
+
+  - type: textarea
+    id: kpi
+    attributes:
+      label: 成功指標（KPI）
+      description: 目標達成をどのように測定するか
+      placeholder: |
+        - 定量的な指標（数値で測定可能）
+        - 定性的な指標（状態の変化）
+      value: |
+        - [ ] 指標1:
+        - [ ] 指標2:
+        - [ ] 指標3:
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: 達成期限
+      description: この目標をいつまでに達成するか
+      placeholder: 例：2025年12月末
+    validations:
+      required: false
+
+  - type: textarea
+    id: related_epics
+    attributes:
+      label: 関連Epic
+      description: この目標を構成するEpic（成果物の塊）
+      placeholder: |
+        - #XX Epic名1
+        - #XX Epic名2
+      value: |
+        -
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 備考
+      description: 参考リンク、前提条件、制約事項など
+      placeholder: 追加情報があれば記載
+    validations:
+      required: false

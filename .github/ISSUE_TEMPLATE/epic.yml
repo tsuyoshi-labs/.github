@@ -1,0 +1,107 @@
+name: 📦 Epic (成果物の塊)
+description: 複数のタスクをまとめた成果物の塊を定義します
+title: "[EPIC] "
+labels: ["epic"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Epic（成果物の塊）
+        複数のタスクで構成される、まとまった成果物や機能を定義します。
+
+  - type: input
+    id: title
+    attributes:
+      label: Epic名
+      description: このEpicを端的に表す名前
+      placeholder: 例：Issue自動化システムの構築
+    validations:
+      required: true
+
+  - type: textarea
+    id: overview
+    attributes:
+      label: 概要
+      description: このEpicで何を実現するのか
+      placeholder: 実現する機能や成果物を簡潔に説明
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景・目的
+      description: なぜこのEpicが必要なのか
+      placeholder: |
+        - 解決したい課題
+        - 期待される効果
+        - ビジネス価値
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: 受け入れ条件
+      description: このEpicが完了したと判断する基準
+      placeholder: 完了の定義を明確に
+      value: |
+        - [ ] 条件1:
+        - [ ] 条件2:
+        - [ ] 条件3:
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 優先度
+      description: このEpicの優先度
+      options:
+        - High
+        - Medium
+        - Low
+      default: 1
+    validations:
+      required: true
+
+  - type: input
+    id: related_goal
+    attributes:
+      label: 関連Goal
+      description: このEpicが紐づく年次目標
+      placeholder: "#XX Goal名"
+    validations:
+      required: false
+
+  - type: textarea
+    id: sub_tasks
+    attributes:
+      label: サブTask一覧
+      description: このEpicを構成するタスク（作成後に追記可能）
+      placeholder: |
+        - [ ] #XX タスク名1
+        - [ ] #XX タスク名2
+        - [ ] #XX タスク名3
+      value: |
+        - [ ]
+    validations:
+      required: false
+
+  - type: input
+    id: deadline
+    attributes:
+      label: 完了目標日
+      description: いつまでに完了を目指すか
+      placeholder: 例：2025-03-31
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 備考
+      description: 参考リンク、技術的な制約、前提条件など
+      placeholder: 追加情報があれば記載
+    validations:
+      required: false

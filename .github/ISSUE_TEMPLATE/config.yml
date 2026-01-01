@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📚 ドキュメント
+    url: https://github.com/tsuyoshi-labs/task-template/blob/main/README.md
+    about: セットアップ方法や使い方はドキュメントを参照してください
+  - name: 💬 ディスカッション
+    url: https://github.com/tsuyoshi-labs/task-template/discussions
+    about: 質問や提案はDiscussionsで議論しましょう

@@ -1,0 +1,39 @@
+name: Add Issues to Project
+
+on:
+  workflow_call:
+    inputs:
+      project-url:
+        description: 'GitHub Project URL'
+        required: true
+        type: string
+      labeled:
+        description: 'Labels to filter (comma-separated)'
+        required: false
+        type: string
+        default: 'goal, epic, task'
+      label-operator:
+        description: 'Label operator (AND or OR)'
+        required: false
+        type: string
+        default: 'OR'
+    secrets:
+      ADD_TO_PROJECT_PAT:
+        required: true
+
+permissions:
+  contents: read
+  issues: read
+  repository-projects: write
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add issue to Project
+        uses: actions/add-to-project@v1
+        with:
+          project-url: ${{ inputs.project-url }}
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
+          labeled: ${{ inputs.labeled }}
+          label-operator: ${{ inputs.label-operator }}
